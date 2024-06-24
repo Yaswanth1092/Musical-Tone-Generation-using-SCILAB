@@ -1,0 +1,20 @@
+ck ; 
+close; 
+clear ; 
+frequency =[240 254 302 320 358.5 380 451 470]; 1/CorrespondingFrequency 
+fs =8000; //Sampling Frequency 
+no =8; 
+N =I :4000; // Total No.of Samples for E ch tone 
+temp=[]; 
+for i = I :no 
+y = sin(2*3.14*(frequency(i)/fs)*N); 
+temp =[temp y ]; 
+end 
+length(temp ); 
+subplot( 1,2, 1 ); 
+plot(frequency ); 
+title('lnput frequency'); 
+subplot( 1,2,2 ); 
+plot(temp ); 
+title('Output'); 
+sound (temp,fs ); 
